@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/b")
+@RequestMapping("/1.0")
 public class ServiceBRestController {
 
 
-    @GetMapping
+    @GetMapping("/service-b")
     String serviceB(){
 
         return "This is Service B";

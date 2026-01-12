@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  service-b:
+    image: service-b:latest
+    container_name: service-b
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    restart: unless-stopped
