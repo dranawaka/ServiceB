@@ -2,13 +2,19 @@ version: "3.9"
 
 services:
   service-b:
-    image: service-b:latest
     container_name: service-b
     build:
       context: .
       dockerfile: Dockerfile
+    image: service-b:latest
     ports:
       - "8082:8080"
     environment:
       SPRING_PROFILES_ACTIVE: docker
+    networks:
+      - shared-net
     restart: unless-stopped
+
+networks:
+  shared-net:
+    external: true
